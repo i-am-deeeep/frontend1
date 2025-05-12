@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 type showType={
     id: number,
@@ -28,8 +29,8 @@ function Shows() {
             
         {fetchedData.map((show: showType) => (
             <li key={show.id}>
-                <h2>{show.title}</h2>
-                <p>{show.description}</p>
+                <Link to={`/shows/${show.id}`}><h2>{show.title}</h2></Link>
+                <p>Description: {show.description}</p>
                 <p>Release Date: {show.release_date}</p>
                 <p>Genre: {show.genre}</p>
                 <p>Rating: {show.rating}</p>

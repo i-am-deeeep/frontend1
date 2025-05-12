@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 type platformType={
     id: number,
@@ -24,8 +25,8 @@ function Platforms() {
             
         {fetchedData.map((platform: platformType) => (
             <li key={platform.id}>
-                <h2>{platform.name}</h2>
-                <a href={platform.url}>{platform.url}</a>
+                <Link to={`/platforms/${platform.id}`}><h2>{platform.name}</h2></Link>
+                URL: <a href={platform.url}>{platform.url}</a>
             </li>
         ))}
         </ul>
